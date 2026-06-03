@@ -1,0 +1,1729 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Weekly Review</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f5f5f4;--bg3:#eeecea;
+  --bgi:#e8f1fb;--bgs:#eaf3de;--bgw:#faeeda;--bgd:#fcebeb;
+  --t1:#1a1a18;--t2:#5f5e5a;--t3:#9b9994;
+  --ti:#185fa5;--ts:#3b6d11;--tw:#854f0b;--td:#a32d2d;
+  --b1:rgba(0,0,0,0.28);--b2:rgba(0,0,0,0.18);--b3:rgba(0,0,0,0.1);
+  --bi:#b5d4f4;--bs:#c0dd97;
+  --r:8px;--rl:12px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1a;--bg2:#252523;--bg3:#2e2e2b;
+  --bgi:#042c53;--bgs:#173404;--bgw:#412402;--bgd:#501313;
+  --t1:#f0ede8;--t2:#b4b2a9;--t3:#888780;
+  --ti:#85b7eb;--ts:#c0dd97;--tw:#fac775;--td:#f09595;
+  --b1:rgba(255,255,255,0.28);--b2:rgba(255,255,255,0.16);--b3:rgba(255,255,255,0.08);
+  --bi:#0c447c;
+}}
+body{background:var(--bg3);font-family:var(--font);color:var(--t1);padding:1.5rem 1rem;min-height:100vh}
+.page{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:1.1rem}
+.card{background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--b3);padding:1rem 1.15rem}
+.row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.title{font-size:19px;font-weight:500;color:var(--t1)}
+.meta{font-size:12px;color:var(--t2);margin-top:3px}
+.slabel{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--t3);margin-bottom:.55rem}
+.tab-group{display:flex;gap:4px}
+.tab{padding:4px 13px;font-size:12px;border-radius:var(--r);border:0.5px solid var(--b2);background:transparent;cursor:pointer;color:var(--t2)}
+.tab.on{background:var(--bgi);color:var(--ti);border-color:var(--bi)}
+hr{border:none;border-top:0.5px solid var(--b3)}
+.badge{display:inline-flex;align-items:center;gap:2px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500}
+.g{background:var(--bgs);color:var(--ts)}
+.a{background:var(--bgw);color:var(--tw)}
+.r{background:var(--bgd);color:var(--td)}
+.info{background:var(--bgi);color:var(--ti)}
+
+/* Drop zone */
+.dropzone{border:1.5px dashed var(--b2);border-radius:var(--rl);padding:1rem 1.2rem;display:flex;align-items:center;gap:12px;cursor:pointer;background:var(--bg);transition:background .15s}
+.dropzone:hover,.dropzone.over{background:var(--bgi)}
+.dropzone input{display:none}
+.dz-icon{font-size:22px;color:var(--t3);flex-shrink:0}
+.dz-text{flex:1}
+.dz-main{font-size:13px;font-weight:500;color:var(--t1)}
+.dz-sub{font-size:11px;color:var(--t3);margin-top:2px}
+.dz-status{font-size:11px;font-weight:500;margin-top:3px}
+.ok{color:var(--ts)}.err{color:var(--td)}
+.export-btn{flex-shrink:0;display:none;align-items:center;gap:7px;padding:9px 14px;font-size:12px;font-weight:500;line-height:1.3;border-radius:var(--r);border:0.5px solid var(--bi);background:var(--bgi);cursor:pointer;color:var(--ti);text-align:left}
+.export-btn:hover{opacity:.8}
+.export-btn small{display:block;font-weight:400;font-size:10px;opacity:.8}
+
+/* Summary */
+.summary-box{background:var(--bg);border-radius:var(--rl);border:0.5px solid var(--b3);overflow:hidden}
+.summary-hdr{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1.1rem;border-bottom:0.5px solid var(--b3)}
+.summary-title{font-size:13px;font-weight:500;color:var(--t1)}
+textarea.summary-ta{width:100%;min-height:180px;border:none;background:transparent;padding:.9rem 1.1rem;font-size:13px;color:var(--t1);font-family:var(--font);line-height:1.7;resize:vertical;outline:none}
+textarea.summary-ta::placeholder{color:var(--t3)}
+.summary-foot{display:flex;justify-content:space-between;align-items:center;padding:.5rem 1.1rem;border-top:0.5px solid var(--b3)}
+.copy-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;font-size:11px;border-radius:var(--r);border:0.5px solid var(--b2);background:transparent;cursor:pointer;color:var(--t2)}
+.copy-btn:hover{background:var(--bg2)}
+
+/* Metric cards */
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:9px}
+.mc{background:var(--bg2);border-radius:var(--r);padding:.85rem .95rem}
+.mc-label{font-size:11px;color:var(--t2);margin-bottom:5px;line-height:1.3}
+.mc-val{font-size:20px;font-weight:500;color:var(--t1);line-height:1}
+.mc-badges{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px}
+.mc-sub{font-size:10px;color:var(--t3);margin-top:3px}
+
+/* Alerts */
+.alert{background:var(--bg);border:0.5px solid var(--b3);border-radius:var(--r);padding:.8rem 1rem;border-left:3px solid var(--td)}
+.alert.warn{border-left-color:#ef9f27}
+.alert.good{border-left-color:#63992250}
+.alert-title{font-size:13px;font-weight:500;color:var(--t1)}
+.alert-body{font-size:12px;color:var(--t2);margin-top:4px;line-height:1.55}
+
+/* Projections */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.proj-card{background:var(--bg2);border-radius:var(--r);padding:.7rem .9rem}
+.proj-scope{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.proj-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.proj-row:last-child{margin-bottom:0}
+.proj-label{font-size:11px;color:var(--t2)}
+.proj-vals{display:flex;gap:5px;align-items:center}
+
+/* Cohorts */
+.cohort-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:9px}
+.ccard{background:var(--bg);border:0.5px solid var(--b3);border-radius:var(--rl);padding:.8rem .95rem}
+.ccard-hdr{font-size:12px;font-weight:500;color:var(--t1);margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center;gap:4px}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:0.5px solid var(--b3);font-size:11px}
+.crow:last-child{border-bottom:none}
+.crow-l{color:var(--t2)}
+.crow-r{display:flex;gap:4px;align-items:center}
+.crow-val{font-weight:500;color:var(--t1)}
+.crow-goal{font-size:10px;color:var(--t3)}
+
+/* Sources */
+.sources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.src{background:var(--bg2);border-radius:var(--r);padding:.65rem .85rem}
+.src-rank{font-size:10px;color:var(--t3);margin-bottom:2px}
+.src-name{font-size:11px;font-weight:500;color:var(--t1);margin-bottom:5px}
+.src-val{font-size:13px;color:var(--t1)}
+.src-sub{font-size:10px;color:var(--t3)}
+
+/* Rocks */
+.rocks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:9px}
+.rcard{background:var(--bg);border:0.5px solid var(--b3);border-radius:var(--rl);padding:.8rem .95rem}
+.rcard-hdr{display:flex;align-items:center;gap:7px;margin-bottom:.6rem}
+.ravatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.rowner{font-size:12px;font-weight:500;color:var(--t1);flex:1}
+.ritem{display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--t2);line-height:1.5;padding:3px 0;border-bottom:0.5px solid var(--b3)}
+.ritem:last-child{border-bottom:none}
+.dept-rocks{background:var(--bg2);border-radius:var(--r);padding:.65rem .85rem;margin-bottom:.8rem;display:flex;flex-direction:column;gap:3px}
+
+.empty{font-size:12px;color:var(--t3);padding:.3rem 0}
+@media(max-width:540px){.proj-grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}body{padding:1rem .6rem}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="row">
+  <div>
+    <div class="title">Marketing weekly review</div>
+    <div class="meta" id="metaLine">May 2026 · 15 of 21 business days elapsed (71% of month)</div>
+  </div>
+  <div class="tab-group">
+    <button class="tab on" onclick="setView('month')">Monthly</button>
+    <button class="tab" onclick="setView('annual')">Annual</button>
+  </div>
+</div>
+
+<!-- DROP ZONE -->
+<div class="dropzone" id="dropZone" onclick="document.getElementById('fileIn').click()" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+  <input type="file" id="fileIn" accept=".xlsx" onchange="onFile(event)">
+  <i class="ti ti-table-import dz-icon"></i>
+  <div class="dz-text">
+    <div class="dz-main">Drop Marketing_L-10_Weekly.xlsx here to populate the dashboard</div>
+    <div class="dz-sub">Reads Sheet1 (funnel), Sheet2 (cohorts), Sheet3 (rocks) · or click to browse</div>
+    <div class="dz-status ok" id="dzStatus">✓ Marketing L-10 Weekly.xlsx loaded — May 2026</div>
+  </div>
+  <button class="export-btn" id="exportBtn" onclick="doExport(event)" style="display: flex;">
+    <i class="ti ti-download" style="font-size:15px"></i>
+    <span>Save &amp; export<small>for GitHub / sharing</small></span>
+  </button>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-box">
+  <div class="summary-hdr">
+    <div style="display:flex;align-items:center;gap:7px">
+      <i class="ti ti-notes" style="font-size:15px;color:var(--ti)"></i>
+      <span class="summary-title">Weekly summary &amp; analysis</span>
+    </div>
+  </div>
+  <div style="padding:.9rem 1.1rem"><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">MARKETING SUMMARY &amp; ANALYSIS — MAY 2026 | Full Month Final Results</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">OVERALL STANDING</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">May closed as a split-result month. The top of the funnel significantly overdelivered — Leads finished at 188% of goal and SQLs crossed at 103% — but that volume didn't convert into revenue at the expected rate. Marketing Sourced ACV closed at $135,320 against a $177,304 goal (76%), a $41,984 shortfall. Cohort blocks show SQO Rate and SQO-to-Win Rate, and those conversion rates tell a more nuanced story than raw volume alone. YTD ACV sits at approximately $741,000 against an annual goal of ~$2,004,546 — roughly 37% complete with 42% of the year elapsed, putting us about $95,000 behind annual pace heading into June.</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">WHAT THE FUNNEL IS TELLING US</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Volume is not the problem. With 3,460 leads against a goal of 1,843 (188%), and SQLs and SQOs both within striking distance of goal, the issue is conversion efficiency in the back half of the funnel. Total Opps came in at 88% of goal (244 vs. 276), and won deals and ACV show the largest gaps. The  SQO Rate and SQO-to-Win Rate data in the cohort sheet makes this visible at the segment level: some cohorts are converting opps to SQOs at well above goal rates while still missing ACV targets, meaning the deals that are closing are smaller than planned. The Opp-to-SQO conversion recovered to goal (70%) after April's dip to 52%, which is a positive signal — but the MDR team's overall opp contribution and the autobooking channel both need attention given the Season 2 rocks tracking.</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">COHORT BREAKDOWN</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Outperformers — ProConnect, CCH, Drake, Intuit General</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">These four cohorts are all beating ACV goal by significant margins. CCH is running at 250% of ACV goal, Drake at 181%, Intuit General at 246%, and ProConnect at 171%. Their SQO-to-Win Rates are above or at goal, and ASP is holding. These segments are working — the messaging, targeting, and sales motion are aligned. The focus should be on protecting and scaling what's driving results here.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Underperformers — General Accounting, UltraTax CS, Lacerte/ProSeries</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">General Accounting remains the most significant gap — $14,358 ACV vs. a $27,180 goal (53%). The SQO Rate came in at 40% of goal (0.40 actual vs. 0.60 goal), meaning opps aren't qualifying at the expected rate. Only 1 won deal closed against a goal of 11. This is both a qualification and a close rate problem and needs a dedicated diagnostic before June pipeline builds on the same pattern.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">UltraTax CS created strong opp volume and SQOs came in at 23 (close to the 23 goal after adjustments), but ASP ran below goal ($2,599 vs. $3,856), and won deals were at 4 vs. a goal of 14. This is primarily a close rate and deal size issue. Worth noting: the Season 2 rock targeting 183 UTCS SQOs is currently at 56 (31% of season goal, 20% through season — 11 points behind pace).</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Lacerte/ProSeries has strong ASP ($2,933 vs. $2,297 goal) but only 8 of 24 goal won deals closed. High quality, low volume. There are likely in-flight deals that didn't close in May that should be a priority push in June.</p><div style="height:.5rem"></div><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">SEASONAL ROCKS — PLANNING SEASON PACING</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">With May complete (20% of the May–Sep season elapsed), here's where the department rocks stand:</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Generate 1,337 Opps in Season 2: 246 actual vs. 267 expected at pace — 7 points behind</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Generate 156 PTO SQOs: 24 actual vs. 31 expected at pace — 4 points behind</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Generate 183 UTCS SQOs: 56 actual vs. 37 expected at pace — 10 points ahead ✓</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Generate 1,302 SmartRequestAI Opps: 43 actual vs. 260 expected at pace — significantly behind, needs immediate attention</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Rachel's 875 Autobookings rock: 135 actual vs. 175 expected at pace — behind, but early in season</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">The SmartRequestAI Opps rock is the most urgent flag in the rocks section. At 43 actual against a 260 expected pace figure and a 1,302 season goal, this is tracking well below where it needs to be. June needs a major push.</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">REVENUE SOURCES</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Revenue source data through April shows Organic declining steeply from $112,467 in January to $27,243 in April — a 76% drop over four months. This is the top revenue source and the trend is concerning. Intuit revenue has been more stable. Paid Search and Webinar are also declining. Understanding what's driving the Organic decline (SEO, brand search, direct) and whether May continued the trend should be a priority conversation.</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">RECOMMENDED NEXT STEPS FOR JUNE</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">General Accounting — root cause diagnostic. One won deal out of 62 opps (9% close rate vs. a 36% implied goal rate) is the biggest single issue in the data. Pull every General Accounting opp created in May, identify where they stalled, and determine if this is a targeting, routing, or product fit problem before June pipeline follows the same pattern.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">SmartRequestAI Opps — urgent ramp. At 43 opps against a 1,302 season goal, this rock is tracking to miss by a wide margin. The team needs clarity this week on what activities are expected to drive SRAI opps and whether the season goal is still achievable given May's output.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Lacerte/ProSeries pipeline acceleration. Strong ASP means deals here are worth more than average. Work with Sales on in-flight Lacerte/ProSeries opps from May that didn't close — even 6–8 additional won deals would materially improve June ACV.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">UltraTax CS ASP investigation. Running $1,257 below ASP goal suggests either a deal mix shift toward smaller accounts or active discounting. Understanding the cause prevents it compounding through the rest of the season.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Organic revenue decline. Four straight months of significant decline in the top revenue source needs an owner and a plan. Identify whether this is an SEO, brand, or channel attribution issue before it becomes a larger problem in Q3.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Protect what's working. ProConnect, CCH, Drake, and Intuit General are all significantly outperforming. Document the specific campaigns, channels, and messaging driving these results and determine whether elements can be applied to the underperforming cohorts.</p><div style="height:.5rem"></div><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">WATCH LIST FOR JUNE</p><div style="height:.5rem"></div><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">Annual ACV pace requires approximately $183,000/month for the rest of the year to hit the $2,004,546 goal. May's $135,320 was well short of that pace. June needs to be a meaningful step-up month.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">MDR team momentum (Bryan at 25 opps, Kenny at 17, Javier consistent) is a real asset — the LinkedIn MDR Outbound Activation rock (Bryan's Season 2 rock) should be a lever for General Accounting and Lacerte/ProSeries specifically.</p><p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">The Autobooking SQO rock and the broader autobooking channel contributed 128 opps in May — monitoring whether this scales in June will indicate whether the Rachel/autobooking motion is on track for the 875 season goal.</p></div>
+</div>
+  <textarea class="summary-ta" id="summaryTA" placeholder="Paste or type your weekly summary and analysis here..."></textarea>
+  <div class="summary-foot">
+    <span style="font-size:11px;color:var(--t3)">Content persists while this tab is open</span>
+    <button class="copy-btn" onclick="copySummary()"><i class="ti ti-copy" style="font-size:12px"></i> Copy</button>
+  </div>
+</div>
+
+<!-- FUNNEL METRICS -->
+<div class="card">
+  <div class="slabel" id="cardLabel">Month-to-date actuals</div>
+  <div class="metric-grid" id="metricGrid"><div class="mc">
+      <div class="mc-label">Mktg sourced ACV</div>
+      <div class="mc-val">$135,320</div>
+      <div class="mc-badges"><span class="badge a">→ 76%</span></div>
+      <div class="mc-sub">▲ +$8,674 vs expected pace</div>
+    </div><div class="mc">
+      <div class="mc-label">Leads</div>
+      <div class="mc-val">3,460</div>
+      <div class="mc-badges"><span class="badge g">↑ 188%</span></div>
+      <div class="mc-sub">▲ +2,144 vs expected pace</div>
+    </div><div class="mc">
+      <div class="mc-label">SQLs</div>
+      <div class="mc-val">516</div>
+      <div class="mc-badges"><span class="badge g">↑ 103%</span></div>
+      <div class="mc-sub">▲ +157 vs expected pace</div>
+    </div><div class="mc">
+      <div class="mc-label">Total opps created</div>
+      <div class="mc-val">244</div>
+      <div class="mc-badges"><span class="badge a">→ 88%</span></div>
+      <div class="mc-sub">▲ +47 vs expected pace</div>
+    </div><div class="mc">
+      <div class="mc-label">Total SQOs</div>
+      <div class="mc-val">172</div>
+      <div class="mc-badges"><span class="badge a">→ 85%</span></div>
+      <div class="mc-sub">▲ +28 vs expected pace</div>
+    </div></div>
+</div>
+
+<!-- ALERTS -->
+<div class="card">
+  <div class="slabel"><i class="ti ti-alert-triangle" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Needs attention</div>
+  <div style="display:flex;flex-direction:column;gap:8px" id="alertsArea"><div class="alert warn">
+      <div class="row">
+        <div class="alert-title">Mktg sourced ACV — 76% to goal</div>
+        <span class="badge a">At risk</span>
+      </div>
+      <div class="alert-body">
+        Actual: <strong>$135,320</strong> &nbsp;·&nbsp;
+        Goal: $177,304 &nbsp;·&nbsp;
+        Gap: <strong>$41,984</strong> short (24%)
+      </div>
+    </div><div class="alert warn">
+      <div class="row">
+        <div class="alert-title">Total opps created — 88% to goal</div>
+        <span class="badge a">At risk</span>
+      </div>
+      <div class="alert-body">
+        Actual: <strong>244</strong> &nbsp;·&nbsp;
+        Goal: 276 &nbsp;·&nbsp;
+        Gap: <strong>32</strong> short (12%)
+      </div>
+    </div><div class="alert warn">
+      <div class="row">
+        <div class="alert-title">Total SQOs — 85% to goal</div>
+        <span class="badge a">At risk</span>
+      </div>
+      <div class="alert-body">
+        Actual: <strong>172</strong> &nbsp;·&nbsp;
+        Goal: 202 &nbsp;·&nbsp;
+        Gap: <strong>30</strong> short (15%)
+      </div>
+    </div></div>
+</div>
+
+<!-- COHORTS -->
+<div class="card">
+  <div class="slabel">Prospect cohorts by tax software</div>
+  <div class="cohort-grid" id="cohortGrid"><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#185FA5;display:inline-block;flex-shrink:0"></span>
+          UltraTax CS
+        </span>
+        <span class="badge a" style="font-size:10px">87% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">64</span>
+            <span class="crow-goal">/ 44</span>
+            <span class="badge g" style="font-size:10px">↑145%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">56</span>
+            <span class="crow-goal">/ 38</span>
+            <span class="badge g" style="font-size:10px">↑147%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">16</span>
+            <span class="crow-goal">/ 12</span>
+            <span class="badge g" style="font-size:10px">↑133%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$41,577</span>
+            <span class="crow-goal">/ $47,797</span>
+            <span class="badge a" style="font-size:10px">87%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#7F77DD;display:inline-block;flex-shrink:0"></span>
+          Lacerte / ProSeries
+        </span>
+        <span class="badge g" style="font-size:10px">94% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">104</span>
+            <span class="crow-goal">/ 47</span>
+            <span class="badge g" style="font-size:10px">↑200%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">41</span>
+            <span class="crow-goal">/ 40</span>
+            <span class="badge g" style="font-size:10px">↑102%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">14</span>
+            <span class="crow-goal">/ 19</span>
+            <span class="badge a" style="font-size:10px">74%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$41,058</span>
+            <span class="crow-goal">/ $43,712</span>
+            <span class="badge g" style="font-size:10px">94%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#D85A30;display:inline-block;flex-shrink:0"></span>
+          ProConnect
+        </span>
+        <span class="badge r" style="font-size:10px">51% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">28</span>
+            <span class="crow-goal">/ 41</span>
+            <span class="badge r" style="font-size:10px">68%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">24</span>
+            <span class="crow-goal">/ 32</span>
+            <span class="badge a" style="font-size:10px">75%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">9</span>
+            <span class="crow-goal">/ 16</span>
+            <span class="badge r" style="font-size:10px">56%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$13,319</span>
+            <span class="crow-goal">/ $26,040</span>
+            <span class="badge r" style="font-size:10px">51%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#639922;display:inline-block;flex-shrink:0"></span>
+          CCH
+        </span>
+        <span class="badge g" style="font-size:10px">189% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">13</span>
+            <span class="crow-goal">/ 11</span>
+            <span class="badge g" style="font-size:10px">↑118%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">8</span>
+            <span class="crow-goal">/ 9</span>
+            <span class="badge a" style="font-size:10px">89%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">3</span>
+            <span class="crow-goal">/ 3</span>
+            <span class="badge g" style="font-size:10px">100%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$10,200</span>
+            <span class="crow-goal">/ $5,403</span>
+            <span class="badge g" style="font-size:10px">↑189%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#D4537E;display:inline-block;flex-shrink:0"></span>
+          Drake
+        </span>
+        <span class="badge g" style="font-size:10px">155% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">17</span>
+            <span class="crow-goal">/ 19</span>
+            <span class="badge a" style="font-size:10px">89%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">12</span>
+            <span class="crow-goal">/ 15</span>
+            <span class="badge a" style="font-size:10px">80%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">4</span>
+            <span class="crow-goal">/ 3</span>
+            <span class="badge g" style="font-size:10px">↑133%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$7,800</span>
+            <span class="crow-goal">/ $5,040</span>
+            <span class="badge g" style="font-size:10px">↑155%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#888780;display:inline-block;flex-shrink:0"></span>
+          Intuit General
+        </span>
+        <span class="badge r" style="font-size:10px">69% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">11</span>
+            <span class="crow-goal">/ 22</span>
+            <span class="badge r" style="font-size:10px">50%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">6</span>
+            <span class="crow-goal">/ 13</span>
+            <span class="badge r" style="font-size:10px">46%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">4</span>
+            <span class="crow-goal">/ 6</span>
+            <span class="badge r" style="font-size:10px">67%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$7,122</span>
+            <span class="crow-goal">/ $10,358</span>
+            <span class="badge r" style="font-size:10px">69%</span>
+          </div>
+        </div>
+    </div><div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#BA7517;display:inline-block;flex-shrink:0"></span>
+          General Accounting
+        </span>
+        <span class="badge r" style="font-size:10px">37% ACV</span>
+      </div>
+      <div class="crow">
+          <div class="crow-l">Opps</div>
+          <div class="crow-r">
+            <span class="crow-val">62</span>
+            <span class="crow-goal">/ 91</span>
+            <span class="badge r" style="font-size:10px">68%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">SQOs</div>
+          <div class="crow-r">
+            <span class="crow-val">25</span>
+            <span class="crow-goal">/ 55</span>
+            <span class="badge r" style="font-size:10px">45%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">Won deals</div>
+          <div class="crow-r">
+            <span class="crow-val">8</span>
+            <span class="crow-goal">/ 20</span>
+            <span class="badge r" style="font-size:10px">40%</span>
+          </div>
+        </div><div class="crow">
+          <div class="crow-l">ACV</div>
+          <div class="crow-r">
+            <span class="crow-val">$14,358</span>
+            <span class="crow-goal">/ $38,953</span>
+            <span class="badge r" style="font-size:10px">37%</span>
+          </div>
+        </div>
+    </div></div>
+</div>
+
+<!-- SOURCES -->
+<div class="card">
+  <div class="slabel">Top 5 lead sources — <span id="srcMonthLabel">Jan – May</span></div>
+  <div class="sources-grid" id="sourcesGrid"><div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#185FA5;flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">Zoominfo</span>
+        <span class="src-rank">#1</span>
+      </div>
+      <svg viewBox="0 0 260 80" width="100%" style="display:block;overflow:visible">
+      <line x1="32" y1="58.0" x2="254.0" y2="58.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="32.0" x2="254.0" y2="32.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="6.0" x2="254.0" y2="6.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line>
+      <text x="29.0" y="58.0" text-anchor="end" font-size="9" fill="var(--t3)">0</text>
+      <text x="29.0" y="10.0" text-anchor="end" font-size="9" fill="var(--t3)">2.1k</text>
+      <text x="32.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Jan</text>
+      <text x="87.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Feb</text>
+      <text x="143.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Mar</text>
+      <text x="198.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Apr</text>
+      <text x="254.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">May</text>
+      <path d="M32.0,44.2 L87.5,15.7 L143.0,44.7 L198.5,42.7 L254.0,6.0 L254.0,58.0 L32.0,58.0 Z" fill="#185FA5" opacity="0.08"></path>
+      <path d="M32.0,44.2 L87.5,15.7 L143.0,44.7 L198.5,42.7 L254.0,6.0" fill="none" stroke="#185FA5" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      
+      <circle cx="32.0" cy="44.2" r="3" fill="#185FA5" stroke="var(--bg)" stroke-width="1.5">
+        <title>Jan: 565 leads</title>
+      </circle>
+      <circle cx="87.5" cy="15.7" r="3" fill="#185FA5" stroke="var(--bg)" stroke-width="1.5">
+        <title>Feb: 1,736 leads</title>
+      </circle>
+      <circle cx="143.0" cy="44.7" r="3" fill="#185FA5" stroke="var(--bg)" stroke-width="1.5">
+        <title>Mar: 545 leads</title>
+      </circle>
+      <circle cx="198.5" cy="42.7" r="3" fill="#185FA5" stroke="var(--bg)" stroke-width="1.5">
+        <title>Apr: 629 leads</title>
+      </circle>
+      <circle cx="254.0" cy="6.0" r="3" fill="#185FA5" stroke="var(--bg)" stroke-width="1.5">
+        <title>May: 2,136 leads</title>
+      </circle>
+    </svg>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">2,136</span><span class="src-sub"> May</span><span style="font-size:10px;color:var(--ts);margin-left:4px">▲1,507 vs Apr</span></div>
+        <div><span style="font-size:11px;color:var(--t2)">5,611</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div><div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#7F77DD;flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">Event</span>
+        <span class="src-rank">#2</span>
+      </div>
+      <svg viewBox="0 0 260 80" width="100%" style="display:block;overflow:visible">
+      <line x1="32" y1="58.0" x2="254.0" y2="58.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="32.0" x2="254.0" y2="32.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="6.0" x2="254.0" y2="6.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line>
+      <text x="29.0" y="58.0" text-anchor="end" font-size="9" fill="var(--t3)">0</text>
+      <text x="29.0" y="10.0" text-anchor="end" font-size="9" fill="var(--t3)">2.1k</text>
+      <text x="32.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Jan</text>
+      <text x="87.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Feb</text>
+      <text x="143.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Mar</text>
+      <text x="198.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Apr</text>
+      <text x="254.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">May</text>
+      <path d="M32.0,18.4 L87.5,27.5 L143.0,46.3 L198.5,42.5 L254.0,40.3 L254.0,58.0 L32.0,58.0 Z" fill="#7F77DD" opacity="0.08"></path>
+      <path d="M32.0,18.4 L87.5,27.5 L143.0,46.3 L198.5,42.5 L254.0,40.3" fill="none" stroke="#7F77DD" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      
+      <circle cx="32.0" cy="18.4" r="3" fill="#7F77DD" stroke="var(--bg)" stroke-width="1.5">
+        <title>Jan: 1,626 leads</title>
+      </circle>
+      <circle cx="87.5" cy="27.5" r="3" fill="#7F77DD" stroke="var(--bg)" stroke-width="1.5">
+        <title>Feb: 1,253 leads</title>
+      </circle>
+      <circle cx="143.0" cy="46.3" r="3" fill="#7F77DD" stroke="var(--bg)" stroke-width="1.5">
+        <title>Mar: 479 leads</title>
+      </circle>
+      <circle cx="198.5" cy="42.5" r="3" fill="#7F77DD" stroke="var(--bg)" stroke-width="1.5">
+        <title>Apr: 635 leads</title>
+      </circle>
+      <circle cx="254.0" cy="40.3" r="3" fill="#7F77DD" stroke="var(--bg)" stroke-width="1.5">
+        <title>May: 726 leads</title>
+      </circle>
+    </svg>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">726</span><span class="src-sub"> May</span><span style="font-size:10px;color:var(--ts);margin-left:4px">▲91 vs Apr</span></div>
+        <div><span style="font-size:11px;color:var(--t2)">4,719</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div><div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#D85A30;flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">Paid Search</span>
+        <span class="src-rank">#3</span>
+      </div>
+      <svg viewBox="0 0 260 80" width="100%" style="display:block;overflow:visible">
+      <line x1="32" y1="58.0" x2="254.0" y2="58.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="32.0" x2="254.0" y2="32.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="6.0" x2="254.0" y2="6.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line>
+      <text x="29.0" y="58.0" text-anchor="end" font-size="9" fill="var(--t3)">0</text>
+      <text x="29.0" y="10.0" text-anchor="end" font-size="9" fill="var(--t3)">2.1k</text>
+      <text x="32.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Jan</text>
+      <text x="87.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Feb</text>
+      <text x="143.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Mar</text>
+      <text x="198.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Apr</text>
+      <text x="254.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">May</text>
+      <path d="M32.0,55.7 L87.5,57.1 L143.0,56.4 L198.5,57.5 L254.0,57.1 L254.0,58.0 L32.0,58.0 Z" fill="#D85A30" opacity="0.08"></path>
+      <path d="M32.0,55.7 L87.5,57.1 L143.0,56.4 L198.5,57.5 L254.0,57.1" fill="none" stroke="#D85A30" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      
+      <circle cx="32.0" cy="55.7" r="3" fill="#D85A30" stroke="var(--bg)" stroke-width="1.5">
+        <title>Jan: 95 leads</title>
+      </circle>
+      <circle cx="87.5" cy="57.1" r="3" fill="#D85A30" stroke="var(--bg)" stroke-width="1.5">
+        <title>Feb: 36 leads</title>
+      </circle>
+      <circle cx="143.0" cy="56.4" r="3" fill="#D85A30" stroke="var(--bg)" stroke-width="1.5">
+        <title>Mar: 65 leads</title>
+      </circle>
+      <circle cx="198.5" cy="57.5" r="3" fill="#D85A30" stroke="var(--bg)" stroke-width="1.5">
+        <title>Apr: 20 leads</title>
+      </circle>
+      <circle cx="254.0" cy="57.1" r="3" fill="#D85A30" stroke="var(--bg)" stroke-width="1.5">
+        <title>May: 36 leads</title>
+      </circle>
+    </svg>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">36</span><span class="src-sub"> May</span><span style="font-size:10px;color:var(--ts);margin-left:4px">▲16 vs Apr</span></div>
+        <div><span style="font-size:11px;color:var(--t2)">252</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div><div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#639922;flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">Organic Search</span>
+        <span class="src-rank">#4</span>
+      </div>
+      <svg viewBox="0 0 260 80" width="100%" style="display:block;overflow:visible">
+      <line x1="32" y1="58.0" x2="254.0" y2="58.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="32.0" x2="254.0" y2="32.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="6.0" x2="254.0" y2="6.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line>
+      <text x="29.0" y="58.0" text-anchor="end" font-size="9" fill="var(--t3)">0</text>
+      <text x="29.0" y="10.0" text-anchor="end" font-size="9" fill="var(--t3)">2.1k</text>
+      <text x="32.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Jan</text>
+      <text x="87.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Feb</text>
+      <text x="143.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Mar</text>
+      <text x="198.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Apr</text>
+      <text x="254.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">May</text>
+      <path d="M32.0,53.9 L87.5,55.3 L143.0,50.5 L198.5,56.8 L254.0,57.2 L254.0,58.0 L32.0,58.0 Z" fill="#639922" opacity="0.08"></path>
+      <path d="M32.0,53.9 L87.5,55.3 L143.0,50.5 L198.5,56.8 L254.0,57.2" fill="none" stroke="#639922" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      
+      <circle cx="32.0" cy="53.9" r="3" fill="#639922" stroke="var(--bg)" stroke-width="1.5">
+        <title>Jan: 169 leads</title>
+      </circle>
+      <circle cx="87.5" cy="55.3" r="3" fill="#639922" stroke="var(--bg)" stroke-width="1.5">
+        <title>Feb: 111 leads</title>
+      </circle>
+      <circle cx="143.0" cy="50.5" r="3" fill="#639922" stroke="var(--bg)" stroke-width="1.5">
+        <title>Mar: 307 leads</title>
+      </circle>
+      <circle cx="198.5" cy="56.8" r="3" fill="#639922" stroke="var(--bg)" stroke-width="1.5">
+        <title>Apr: 49 leads</title>
+      </circle>
+      <circle cx="254.0" cy="57.2" r="3" fill="#639922" stroke="var(--bg)" stroke-width="1.5">
+        <title>May: 33 leads</title>
+      </circle>
+    </svg>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">33</span><span class="src-sub"> May</span><span style="font-size:10px;color:var(--td);margin-left:4px">▼16 vs Apr</span></div>
+        <div><span style="font-size:11px;color:var(--t2)">669</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div><div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#D4537E;flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">Direct</span>
+        <span class="src-rank">#5</span>
+      </div>
+      <svg viewBox="0 0 260 80" width="100%" style="display:block;overflow:visible">
+      <line x1="32" y1="58.0" x2="254.0" y2="58.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="32.0" x2="254.0" y2="32.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line><line x1="32" y1="6.0" x2="254.0" y2="6.0" stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"></line>
+      <text x="29.0" y="58.0" text-anchor="end" font-size="9" fill="var(--t3)">0</text>
+      <text x="29.0" y="10.0" text-anchor="end" font-size="9" fill="var(--t3)">2.1k</text>
+      <text x="32.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Jan</text>
+      <text x="87.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Feb</text>
+      <text x="143.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Mar</text>
+      <text x="198.5" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">Apr</text>
+      <text x="254.0" y="71.0" text-anchor="middle" font-size="9" fill="var(--t3)">May</text>
+      <path d="M32.0,57.7 L87.5,57.9 L143.0,57.1 L198.5,57.8 L254.0,57.5 L254.0,58.0 L32.0,58.0 Z" fill="#D4537E" opacity="0.08"></path>
+      <path d="M32.0,57.7 L87.5,57.9 L143.0,57.1 L198.5,57.8 L254.0,57.5" fill="none" stroke="#D4537E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      
+      <circle cx="32.0" cy="57.7" r="3" fill="#D4537E" stroke="var(--bg)" stroke-width="1.5">
+        <title>Jan: 14 leads</title>
+      </circle>
+      <circle cx="87.5" cy="57.9" r="3" fill="#D4537E" stroke="var(--bg)" stroke-width="1.5">
+        <title>Feb: 6 leads</title>
+      </circle>
+      <circle cx="143.0" cy="57.1" r="3" fill="#D4537E" stroke="var(--bg)" stroke-width="1.5">
+        <title>Mar: 38 leads</title>
+      </circle>
+      <circle cx="198.5" cy="57.8" r="3" fill="#D4537E" stroke="var(--bg)" stroke-width="1.5">
+        <title>Apr: 8 leads</title>
+      </circle>
+      <circle cx="254.0" cy="57.5" r="3" fill="#D4537E" stroke="var(--bg)" stroke-width="1.5">
+        <title>May: 20 leads</title>
+      </circle>
+    </svg>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">20</span><span class="src-sub"> May</span><span style="font-size:10px;color:var(--ts);margin-left:4px">▲12 vs Apr</span></div>
+        <div><span style="font-size:11px;color:var(--t2)">86</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div></div>
+</div>
+
+<!-- ROCKS -->
+<div class="card">
+  <div class="slabel"><i class="ti ti-mountain" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Seasonal rocks</div>
+  <div id="rocksSection">
+    <div class="slabel" style="margin-bottom:.4rem;margin-top:.1rem">Department rocks — planning season</div>
+    <div class="dept-rocks" id="deptRocks"><div style="font-size:11px;color:var(--t3);margin-bottom:.6rem;display:flex;align-items:center;gap:5px">
+      <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+      22% through season (May–Sep) — pace marker shown on each bar
+    </div>
+      <div style="padding:.6rem 0;border-bottom:0.5px solid var(--b3)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Generate 1,337 Opportunities in Season 2</span>
+        </div>
+        
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:18%;background:#639922;border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: 22%" style="position:absolute;top:-3px;left:22%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">246 / 1,337</span>
+          <span style="font-size:11px;font-weight:600;color:#639922;white-space:nowrap">18%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: 294 (22%) &nbsp;·&nbsp; <span style="color:#E24B4A">▼ 4pts behind</span>
+        </div>
+      </div>
+      </div>
+      <div style="padding:.6rem 0;border-bottom:0.5px solid var(--b3)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Generate 156 PTO SQOs in Season 2</span>
+        </div>
+        
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:15%;background:#EF9F27;border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: 22%" style="position:absolute;top:-3px;left:22%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">24 / 156</span>
+          <span style="font-size:11px;font-weight:600;color:#EF9F27;white-space:nowrap">15%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: 34 (22%) &nbsp;·&nbsp; <span style="color:#E24B4A">▼ 7pts behind</span>
+        </div>
+      </div>
+      </div>
+      <div style="padding:.6rem 0;border-bottom:0.5px solid var(--b3)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Generate 183 UTCS SQO's in Season 2</span>
+        </div>
+        
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:31%;background:#639922;border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: 22%" style="position:absolute;top:-3px;left:22%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">56 / 183</span>
+          <span style="font-size:11px;font-weight:600;color:#639922;white-space:nowrap">31%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: 40 (22%) &nbsp;·&nbsp; <span style="color:#639922">▲ 9pts ahead</span>
+        </div>
+      </div>
+      </div>
+      <div style="padding:.6rem 0;border-bottom:0.5px solid var(--b3)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Generate 1,302 SmartRequestAI Opps in Season 2</span>
+        </div>
+        
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:3%;background:#EF9F27;border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: 22%" style="position:absolute;top:-3px;left:22%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">43 / 1,302</span>
+          <span style="font-size:11px;font-weight:600;color:#EF9F27;white-space:nowrap">3%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: 286 (22%) &nbsp;·&nbsp; <span style="color:#E24B4A">▼ 19pts behind</span>
+        </div>
+      </div>
+      </div>
+      <div style="padding:.6rem 0;border-bottom:0.5px solid var(--b3)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Build and Execute a GTM plan and supporting campaign activity to launch SmartProposals on 10/1/26</span>
+        </div>
+        
+      </div>
+      <div style="padding:.6rem 0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">Implement Outreach Amplify Agents to convert 1,176 leads into 35 Opps in Season 2</span>
+        </div>
+        
+      </div><div class="empty" style="display:none"></div></div>
+    <div class="slabel" style="margin-bottom:.5rem">Team rocks — selling season</div>
+    <div class="rocks-grid" id="rocksGrid"><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#63992222;color:#639922">BF</span>
+        <span class="rowner">Bernadette Frazier</span>
+        <span class="badge info" style="font-size:10px">4</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#639922;flex-shrink:0;margin-top:2px"></i>
+            <span>Build &amp; Implement a Customer and Acquisition Email Performance Marketing Framework to analyze and optimize overall program performance</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#639922;flex-shrink:0;margin-top:2px"></i>
+            <span>Dashboard for movement through the funnel and/or updated campaign response dashboard properly contemplating all lead sources</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#639922;flex-shrink:0;margin-top:2px"></i>
+            <span>Implement lead scoring refinements</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#639922;flex-shrink:0;margin-top:2px"></i>
+            <span>Resolve BigMarker implementation for end-to-end post webinar activity</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#D4537E22;color:#D4537E">BC</span>
+        <span class="rowner">Blake Charman</span>
+        <span class="badge info" style="font-size:10px">4</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D4537E;flex-shrink:0;margin-top:2px"></i>
+            <span>SmartProposals/Engage Category: Create and execute the brand messaging, positioning, and supporting content plan to begin in market 6/1</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D4537E;flex-shrink:0;margin-top:2px"></i>
+            <span>Tax Prep Workflow 2.0 Content Execution: Update Tax Prep Workflow 2.0 eBook and publish series of 9 blog posts, repurpose assets through social, video, and emails.</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D4537E;flex-shrink:0;margin-top:2px"></i>
+            <span>SmartRequestAI Summer 2026 Content Execution: Execute the Summer SRAI Content &amp; Brand Strategy across the funnel — Write 8 blog posts, waterfall the series across social, video, sales enablement, emails.</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D4537E;flex-shrink:0;margin-top:2px"></i>
+            <span>Grow LinkedIn Newsletter subscribers from 800 to 1,200 by end of the season</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#185FA522;color:#185FA5">BA</span>
+        <span class="rowner">Bryan Arevalo</span>
+        <span class="badge info" style="font-size:10px">4</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#185FA5;flex-shrink:0;margin-top:2px"></i>
+            <span>MDR Opportunities: Meet or exceed Season 2 target of 475 Total Direct Opportunities — personally contribute to pipeline as a player-coach while holding the team accountable to individual Opp, SQO, and ACV targets</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#185FA5;flex-shrink:0;margin-top:2px"></i>
+            <span>Outreach Amplify Agent Pilot: Build and implement the Outreach Amplify Agent pilot in partnership with Chad, converting leads into 35 net-new Opportunities by end of Season 2</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#185FA5;flex-shrink:0;margin-top:2px"></i>
+            <span>Team Development: Train, onboard, and coach MDR team to hit Season 2 KPIs (Opps, SQOs, ACV) — maintain weekly 1:1s and individual scorecards to track progress and address gaps in real time</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#185FA5;flex-shrink:0;margin-top:2px"></i>
+            <span>LinkedIn MDR Outbound Activation: Launch and operationalize the MDR team’s LinkedIn outbound strategy inside Outreach during Season 2, generating 500+ LinkedIn connection requests, maintaining a 20%+ acceptance rate, driving 100 LinkedIn replies/conversations, influencing 10 net-new Opportunities, and implementing weekly KPI scorecards and coaching cadence by June 1, 2026.</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#88878022;color:#888780">CH</span>
+        <span class="rowner">Chad Helmlinger</span>
+        <span class="badge info" style="font-size:10px">3</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#888780;flex-shrink:0;margin-top:2px"></i>
+            <span>Co-own with Rachel managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#888780;flex-shrink:0;margin-top:2px"></i>
+            <span>SRAI: Meet or exceed season 2 targets of generating 275 Opps for prospects 'Interested In' SRAI</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#888780;flex-shrink:0;margin-top:2px"></i>
+            <span>SmartProposals: Ensure GTM Readiness by 10/1 across 2 core work streams:</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#D85A3022;color:#D85A30">LP</span>
+        <span class="rowner">Lou Plante</span>
+        <span class="badge info" style="font-size:10px">5</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D85A30;flex-shrink:0;margin-top:2px"></i>
+            <span>Build and Implement new Comparison Page set up. Initial focus will be Truss, Stanford Tax, Intuit Link, and Soraban will be the first competitors we implement by Oct 1</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D85A30;flex-shrink:0;margin-top:2px"></i>
+            <span>Implement all Season 2 deliverables by Oct 1 including rebuilding the SmartPath backend and redoing SV Academy</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D85A30;flex-shrink:0;margin-top:2px"></i>
+            <span>Create a way for the team to add resources and blogs ourselves.</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D85A30;flex-shrink:0;margin-top:2px"></i>
+            <span>Pass core website vitals for both desktop and mobile for all new pages in Season 2 plus Tax Workflow, SRAI, ProConnect, FileCabinet, UltraTax</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#D85A30;flex-shrink:0;margin-top:2px"></i>
+            <span>Scope Season 3 Deliverables and LOE</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#7F77DD22;color:#7F77DD">MB</span>
+        <span class="rowner">Monica Bravo</span>
+        <span class="badge info" style="font-size:10px">3</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Customer Evidence: Complete 20+ customer calls to secure at least 3 SmartRequestAI testimonials and/or case studies by end of Season 2 in support of Customer Marketing objectives</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>SmartProposals GTM: Own the pre- and post-launch GTM plan for SmartProposals — coordinate messaging, competitive intel, sales training, and enablement with the broader Marketing team to ensure full readiness by 10/1</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Web &amp; Messaging Execution: Partner with Lou to implement all visual and messaging updates across SmartVault product pages by 10/1, including the new SmartProposals page, product feature pages, How We Compare, and Integrations</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#7F77DD22;color:#7F77DD">RM</span>
+        <span class="rowner">Rachel Montana</span>
+        <span class="badge info" style="font-size:10px">4</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Co-own with Chad managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Generate 875 Autobookings</span>
+          </div>
+          <div style="width:100%;padding-left:17px">
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:15%;background:#EF9F27;border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: 22%" style="position:absolute;top:-3px;left:22%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">135 / 875</span>
+          <span style="font-size:11px;font-weight:600;color:#EF9F27;white-space:nowrap">15%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: 193 (22%) &nbsp;·&nbsp; <span style="color:#E24B4A">▼ 7pts behind</span>
+        </div>
+      </div></div>
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Drive 1,500 leads through Direct campaign efforts</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#7F77DD;flex-shrink:0;margin-top:2px"></i>
+            <span>Ensure All Season 2 Website Updates are on track and implemented by October 1</span>
+          </div>
+          
+        </div>
+    </div><div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:#BA751722;color:#BA7517">VF</span>
+        <span class="rowner">Vivian Fore</span>
+        <span class="badge info" style="font-size:10px">4</span>
+      </div>
+      
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#BA7517;flex-shrink:0;margin-top:2px"></i>
+            <span>Customer Marketing: Execute all Expansion Revenue &amp; SRAI Comms from May-Oct 2026 to drive towards Opportunity &amp; Revenue targets</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#BA7517;flex-shrink:0;margin-top:2px"></i>
+            <span>Tax Readiness: Build and Execute the Tax Readiness Communication Program from September-December 2026 (includes Exp Rev)</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#BA7517;flex-shrink:0;margin-top:2px"></i>
+            <span>Direct: Execute all self hosted and partner marketing webinars for Season 2</span>
+          </div>
+          
+        </div>
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:#BA7517;flex-shrink:0;margin-top:2px"></i>
+            <span>What's New What's Coming: Execute June WNWC and prepare October WNWC</span>
+          </div>
+          
+        </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- PROJECTIONS -->
+<div class="card">
+  <div class="slabel" id="projLabel">Month-end &amp; year-end projections</div>
+  <div class="proj-grid" id="projGrid"><div class="proj-card">
+    <div class="proj-scope">Month-end projection</div>
+    <div class="proj-row">
+        <div class="proj-label">Mktg sourced ACV</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">$189,448</span>
+          <span class="badge g" style="font-size:10px">↑ 107%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Leads</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">4,844</span>
+          <span class="badge g" style="font-size:10px">↑ 200%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">SQLs</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">722</span>
+          <span class="badge g" style="font-size:10px">↑ 144%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Total opps created</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">342</span>
+          <span class="badge g" style="font-size:10px">↑ 124%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Total SQOs</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">241</span>
+          <span class="badge g" style="font-size:10px">↑ 119%</span>
+        </div>
+      </div>
+  </div><div class="proj-card">
+    <div class="proj-scope">Year-end projection</div>
+    <div class="proj-row">
+        <div class="proj-label">Mktg sourced ACV</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">$1,483,476</span>
+          <span class="badge a" style="font-size:10px">→ 74%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Leads</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">30,366</span>
+          <span class="badge g" style="font-size:10px">↑ 177%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">SQLs</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">4,966</span>
+          <span class="badge g" style="font-size:10px">↑ 109%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Total opps created</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">2,186</span>
+          <span class="badge a" style="font-size:10px">→ 70%</span>
+        </div>
+      </div><div class="proj-row">
+        <div class="proj-label">Total SQOs</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">1,454</span>
+          <span class="badge r" style="font-size:10px">↓ 63%</span>
+        </div>
+      </div>
+  </div></div>
+</div>
+
+</div><!-- /page -->
+
+<script>
+(function(){
+  try{
+    const _p=JSON.parse(`{"D":{"curMonth":"May","bizElapsed":15,"bizTotal":21,"pctElapsed":0.7142857142857143,"isComplete":false,"monthLabel":"May 2026","funnel":[{"id":"acv","label":"Mktg sourced ACV","row":5,"fmt":"$","mgoal":177304,"actual":135320,"expected":126646,"pctGoal":0.7632089518566981},{"id":"mql","label":"Leads","row":9,"fmt":"n","mgoal":1843,"actual":3460,"expected":1316,"pctGoal":1.8773738469886054},{"id":"sql","label":"SQLs","row":11,"fmt":"n","mgoal":502,"actual":516,"expected":359,"pctGoal":1.0278884462151394},{"id":"opps","label":"Total opps created","row":12,"fmt":"n","mgoal":276,"actual":244,"expected":197,"pctGoal":0.8840579710144928},{"id":"sqo","label":"Total SQOs","row":22,"fmt":"n","mgoal":202,"actual":172,"expected":144,"pctGoal":0.8514851485148515}],"ytd":{"acv":{"annualGoal":2004546,"ytdActual":741738,"ytdGoal":711446,"pctAnnual":0.3700279265230132},"mql":{"annualGoal":17119,"ytdActual":15183,"ytdGoal":7026,"pctAnnual":0.8869092820842339},"sql":{"annualGoal":4545,"ytdActual":2483,"ytdGoal":1992,"pctAnnual":0.5463146314631463},"opps":{"annualGoal":3106,"ytdActual":1093,"ytdGoal":1115,"pctAnnual":0.35189954925949773},"sqo":{"annualGoal":2293,"ytdActual":727,"ytdGoal":815,"pctAnnual":0.3170518970780637}},"cohorts":[{"oppsG":44,"oppsA":64,"sqoG":38,"sqoA":56,"wonG":12,"wonA":16,"aspG":3933,"aspA":2599,"acvG":47797.09,"acvA":41577},{"oppsG":47,"oppsA":104,"sqoG":40,"sqoA":41,"wonG":19,"wonA":14,"aspG":2332,"aspA":2933,"acvG":43712.27,"acvA":41058},{"oppsG":41,"oppsA":28,"sqoG":32,"sqoA":24,"wonG":16,"wonA":9,"aspG":1680,"aspA":1480,"acvG":26040.27,"acvA":13319},{"oppsG":11,"oppsA":13,"sqoG":9,"sqoA":8,"wonG":3,"wonA":3,"aspG":2065,"aspA":3400,"acvG":5403.03,"acvA":10200},{"oppsG":19,"oppsA":17,"sqoG":15,"sqoA":12,"wonG":3,"wonA":4,"aspG":1738,"aspA":1950,"acvG":5040.08,"acvA":7800},{"oppsG":22,"oppsA":11,"sqoG":13,"sqoA":6,"wonG":6,"wonA":4,"aspG":1777,"aspA":1781,"acvG":10358.35,"acvA":7122},{"oppsG":91,"oppsA":62,"sqoG":55,"sqoA":25,"wonG":20,"wonA":8,"aspG":1980,"aspA":1795,"acvG":38953.09,"acvA":14358}],"sources":[{"rank":"#1","name":"Zoominfo","mtd":2136,"monthly":{"Jan":565,"Feb":1736,"Mar":545,"Apr":629,"May":2136,"Jun":0,"Jul":0,"Aug":0,"Sep":0},"latestMo":"May"},{"rank":"#2","name":"Event","mtd":726,"monthly":{"Jan":1626,"Feb":1253,"Mar":479,"Apr":635,"May":726,"Jun":0,"Jul":0,"Aug":0,"Sep":0},"latestMo":"May"},{"rank":"#3","name":"Paid Search","mtd":36,"monthly":{"Jan":95,"Feb":36,"Mar":65,"Apr":20,"May":36,"Jun":0,"Jul":0,"Aug":0,"Sep":0},"latestMo":"May"},{"rank":"#4","name":"Organic Search","mtd":33,"monthly":{"Jan":169,"Feb":111,"Mar":307,"Apr":49,"May":33,"Jun":0,"Jul":0,"Aug":0,"Sep":0},"latestMo":"May"},{"rank":"#5","name":"Direct","mtd":20,"monthly":{"Jan":14,"Feb":6,"Mar":38,"Apr":8,"May":20,"Jun":0,"Jul":0,"Aug":0,"Sep":0},"latestMo":"May"}],"rocks":{"planning":[{"rock":"Generate 1,337 Opportunities in Season 2","owner":"Jonathan","actual":246,"goal":1337},{"rock":"Generate 156 PTO SQOs in Season 2","owner":"Jonathan","actual":24,"goal":156},{"rock":"Generate 183 UTCS SQO's in Season 2","owner":"Jonathan","actual":56,"goal":183},{"rock":"Generate 1,302 SmartRequestAI Opps in Season 2","owner":"Jonathan","actual":43,"goal":1302},{"rock":"Build and Execute a GTM plan and supporting campaign activity to launch SmartProposals on 10/1/26","owner":"Jonathan","actual":null,"goal":null},{"rock":"Implement Outreach Amplify Agents to convert 1,176 leads into 35 Opps in Season 2","owner":"Jonathan","actual":null,"goal":null}],"selling":[{"rock":"Co-own with Chad managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)","owner":"Rachel Montana","actual":null,"goal":null},{"rock":"Generate 875 Autobookings","owner":"Rachel Montana","actual":135,"goal":875},{"rock":"Drive 1,500 leads through Direct campaign efforts","owner":"Rachel Montana","actual":null,"goal":null},{"rock":"Ensure All Season 2 Website Updates are on track and implemented by October 1","owner":"Rachel Montana","actual":null,"goal":null},{"rock":"Build and Implement new Comparison Page set up. Initial focus will be Truss, Stanford Tax, Intuit Link, and Soraban will be the first competitors we implement by Oct 1","owner":"Lou Plante","actual":null,"goal":null},{"rock":"Implement all Season 2 deliverables by Oct 1 including rebuilding the SmartPath backend and redoing SV Academy","owner":"Lou Plante","actual":null,"goal":null},{"rock":"Create a way for the team to add resources and blogs ourselves.","owner":"Lou Plante","actual":null,"goal":null},{"rock":"Pass core website vitals for both desktop and mobile for all new pages in Season 2 plus Tax Workflow, SRAI, ProConnect, FileCabinet, UltraTax","owner":"Lou Plante","actual":null,"goal":null},{"rock":"Scope Season 3 Deliverables and LOE","owner":"Lou Plante","actual":null,"goal":null},{"rock":"Build & Implement a Customer and Acquisition Email Performance Marketing Framework to analyze and optimize overall program performance","owner":"Bernadette Frazier","actual":null,"goal":null},{"rock":"Dashboard for movement through the funnel and/or updated campaign response dashboard properly contemplating all lead sources","owner":"Bernadette Frazier","actual":null,"goal":null},{"rock":"Implement lead scoring refinements","owner":"Bernadette Frazier","actual":null,"goal":null},{"rock":"Resolve BigMarker implementation for end-to-end post webinar activity","owner":"Bernadette Frazier","actual":null,"goal":null},{"rock":"SmartProposals/Engage Category: Create and execute the brand messaging, positioning, and supporting content plan to begin in market 6/1","owner":"Blake Charman","actual":null,"goal":null},{"rock":"Tax Prep Workflow 2.0 Content Execution: Update Tax Prep Workflow 2.0 eBook and publish series of 9 blog posts, repurpose assets through social, video, and emails.","owner":"Blake Charman","actual":null,"goal":null},{"rock":"SmartRequestAI Summer 2026 Content Execution: Execute the Summer SRAI Content & Brand Strategy across the funnel — Write 8 blog posts, waterfall the series across social, video, sales enablement, emails.","owner":"Blake Charman","actual":null,"goal":null},{"rock":"Grow LinkedIn Newsletter subscribers from 800 to 1,200 by end of the season","owner":"Blake Charman","actual":null,"goal":null},{"rock":"Customer Marketing: Execute all Expansion Revenue & SRAI Comms from May-Oct 2026 to drive towards Opportunity & Revenue targets","owner":"Vivian Fore","actual":null,"goal":null},{"rock":"Tax Readiness: Build and Execute the Tax Readiness Communication Program from September-December 2026 (includes Exp Rev)","owner":"Vivian Fore","actual":null,"goal":null},{"rock":"Direct: Execute all self hosted and partner marketing webinars for Season 2","owner":"Vivian Fore","actual":null,"goal":null},{"rock":"What's New What's Coming: Execute June WNWC and prepare October WNWC","owner":"Vivian Fore","actual":null,"goal":null},{"rock":"Co-own with Rachel managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)","owner":"Chad Helmlinger","actual":null,"goal":null},{"rock":"SRAI: Meet or exceed season 2 targets of generating 275 Opps for prospects 'Interested In' SRAI","owner":"Chad Helmlinger","actual":null,"goal":null},{"rock":"SmartProposals: Ensure GTM Readiness by 10/1 across 2 core work streams:","owner":"Chad Helmlinger","actual":null,"goal":null},{"rock":"MDR Opportunities: Meet or exceed Season 2 target of 475 Total Direct Opportunities — personally contribute to pipeline as a player-coach while holding the team accountable to individual Opp, SQO, and ACV targets","owner":"Bryan Arevalo","actual":null,"goal":null},{"rock":"Outreach Amplify Agent Pilot: Build and implement the Outreach Amplify Agent pilot in partnership with Chad, converting leads into 35 net-new Opportunities by end of Season 2","owner":"Bryan Arevalo","actual":null,"goal":null},{"rock":"Team Development: Train, onboard, and coach MDR team to hit Season 2 KPIs (Opps, SQOs, ACV) — maintain weekly 1:1s and individual scorecards to track progress and address gaps in real time","owner":"Bryan Arevalo","actual":null,"goal":null},{"rock":"LinkedIn MDR Outbound Activation: Launch and operationalize the MDR team’s LinkedIn outbound strategy inside Outreach during Season 2, generating 500+ LinkedIn connection requests, maintaining a 20%+ acceptance rate, driving 100 LinkedIn replies/conversations, influencing 10 net-new Opportunities, and implementing weekly KPI scorecards and coaching cadence by June 1, 2026.","owner":"Bryan Arevalo","actual":null,"goal":null},{"rock":"Customer Evidence: Complete 20+ customer calls to secure at least 3 SmartRequestAI testimonials and/or case studies by end of Season 2 in support of Customer Marketing objectives","owner":"Monica Bravo","actual":null,"goal":null},{"rock":"SmartProposals GTM: Own the pre- and post-launch GTM plan for SmartProposals — coordinate messaging, competitive intel, sales training, and enablement with the broader Marketing team to ensure full readiness by 10/1","owner":"Monica Bravo","actual":null,"goal":null},{"rock":"Web & Messaging Execution: Partner with Lou to implement all visual and messaging updates across SmartVault product pages by 10/1, including the new SmartProposals page, product feature pages, How We Compare, and Integrations","owner":"Monica Bravo","actual":null,"goal":null}]},"byOwner":{"Rachel Montana":[{"rock":"Co-own with Chad managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)","actual":null,"goal":null},{"rock":"Generate 875 Autobookings","actual":135,"goal":875},{"rock":"Drive 1,500 leads through Direct campaign efforts","actual":null,"goal":null},{"rock":"Ensure All Season 2 Website Updates are on track and implemented by October 1","actual":null,"goal":null}],"Lou Plante":[{"rock":"Build and Implement new Comparison Page set up. Initial focus will be Truss, Stanford Tax, Intuit Link, and Soraban will be the first competitors we implement by Oct 1","actual":null,"goal":null},{"rock":"Implement all Season 2 deliverables by Oct 1 including rebuilding the SmartPath backend and redoing SV Academy","actual":null,"goal":null},{"rock":"Create a way for the team to add resources and blogs ourselves.","actual":null,"goal":null},{"rock":"Pass core website vitals for both desktop and mobile for all new pages in Season 2 plus Tax Workflow, SRAI, ProConnect, FileCabinet, UltraTax","actual":null,"goal":null},{"rock":"Scope Season 3 Deliverables and LOE","actual":null,"goal":null}],"Bernadette Frazier":[{"rock":"Build & Implement a Customer and Acquisition Email Performance Marketing Framework to analyze and optimize overall program performance","actual":null,"goal":null},{"rock":"Dashboard for movement through the funnel and/or updated campaign response dashboard properly contemplating all lead sources","actual":null,"goal":null},{"rock":"Implement lead scoring refinements","actual":null,"goal":null},{"rock":"Resolve BigMarker implementation for end-to-end post webinar activity","actual":null,"goal":null}],"Blake Charman":[{"rock":"SmartProposals/Engage Category: Create and execute the brand messaging, positioning, and supporting content plan to begin in market 6/1","actual":null,"goal":null},{"rock":"Tax Prep Workflow 2.0 Content Execution: Update Tax Prep Workflow 2.0 eBook and publish series of 9 blog posts, repurpose assets through social, video, and emails.","actual":null,"goal":null},{"rock":"SmartRequestAI Summer 2026 Content Execution: Execute the Summer SRAI Content & Brand Strategy across the funnel — Write 8 blog posts, waterfall the series across social, video, sales enablement, emails.","actual":null,"goal":null},{"rock":"Grow LinkedIn Newsletter subscribers from 800 to 1,200 by end of the season","actual":null,"goal":null}],"Vivian Fore":[{"rock":"Customer Marketing: Execute all Expansion Revenue & SRAI Comms from May-Oct 2026 to drive towards Opportunity & Revenue targets","actual":null,"goal":null},{"rock":"Tax Readiness: Build and Execute the Tax Readiness Communication Program from September-December 2026 (includes Exp Rev)","actual":null,"goal":null},{"rock":"Direct: Execute all self hosted and partner marketing webinars for Season 2","actual":null,"goal":null},{"rock":"What's New What's Coming: Execute June WNWC and prepare October WNWC","actual":null,"goal":null}],"Chad Helmlinger":[{"rock":"Co-own with Rachel managing all season 2 Marketing program KPI's and ensuring adjustments are made and supporting activity is in place to achieve 1,337 Opportunities (includes leads, Opps, SQO's)","actual":null,"goal":null},{"rock":"SRAI: Meet or exceed season 2 targets of generating 275 Opps for prospects 'Interested In' SRAI","actual":null,"goal":null},{"rock":"SmartProposals: Ensure GTM Readiness by 10/1 across 2 core work streams:","actual":null,"goal":null}],"Bryan Arevalo":[{"rock":"MDR Opportunities: Meet or exceed Season 2 target of 475 Total Direct Opportunities — personally contribute to pipeline as a player-coach while holding the team accountable to individual Opp, SQO, and ACV targets","actual":null,"goal":null},{"rock":"Outreach Amplify Agent Pilot: Build and implement the Outreach Amplify Agent pilot in partnership with Chad, converting leads into 35 net-new Opportunities by end of Season 2","actual":null,"goal":null},{"rock":"Team Development: Train, onboard, and coach MDR team to hit Season 2 KPIs (Opps, SQOs, ACV) — maintain weekly 1:1s and individual scorecards to track progress and address gaps in real time","actual":null,"goal":null},{"rock":"LinkedIn MDR Outbound Activation: Launch and operationalize the MDR team’s LinkedIn outbound strategy inside Outreach during Season 2, generating 500+ LinkedIn connection requests, maintaining a 20%+ acceptance rate, driving 100 LinkedIn replies/conversations, influencing 10 net-new Opportunities, and implementing weekly KPI scorecards and coaching cadence by June 1, 2026.","actual":null,"goal":null}],"Monica Bravo":[{"rock":"Customer Evidence: Complete 20+ customer calls to secure at least 3 SmartRequestAI testimonials and/or case studies by end of Season 2 in support of Customer Marketing objectives","actual":null,"goal":null},{"rock":"SmartProposals GTM: Own the pre- and post-launch GTM plan for SmartProposals — coordinate messaging, competitive intel, sales training, and enablement with the broader Marketing team to ensure full readiness by 10/1","actual":null,"goal":null},{"rock":"Web & Messaging Execution: Partner with Lou to implement all visual and messaging updates across SmartVault product pages by 10/1, including the new SmartProposals page, product feature pages, How We Compare, and Integrations","actual":null,"goal":null}]}}}`);
+    D=_p.D;
+    window.addEventListener('load',function(){
+      renderAll();
+      document.getElementById('exportBtn').style.display='flex';
+      const dz=document.getElementById('dropZone');
+      dz.querySelector('.dz-main').textContent='Pre-loaded data — drop a new file to update';
+      const st=document.getElementById('dzStatus');
+      st.textContent='✓ Showing pre-loaded data for '+D.monthLabel;
+      st.className='dz-status ok';
+    });
+  }catch(err){ console.warn('Snapshot load failed:',err); }
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+// ─── State ────────────────────────────────────────────────────────────────
+let D = null;
+let VIEW = 'month';
+
+const COHORT_NAMES  = ['UltraTax CS','Lacerte / ProSeries','ProConnect','CCH','Drake','Intuit General','General Accounting'];
+const COHORT_COLORS = ['#185FA5','#7F77DD','#D85A30','#639922','#D4537E','#888780','#BA7517'];
+const OWNER_COLORS  = {
+  'Jonathan':'#185FA5','Rachel Montana':'#7F77DD','Lou Plante':'#D85A30',
+  'Bernadette Frazier':'#639922','Blake Charman':'#D4537E',
+  'Vivian Fore':'#BA7517','Chad Helmlinger':'#888780',
+  'Bryan Arevalo':'#185FA5','Monica Bravo':'#7F77DD'
+};
+
+// Month goal cols (col index in Sheet1): goal=odd, actual=goal+1
+const MO_GOAL = {Jan:3,Feb:5,Mar:7,Apr:9,May:11,Jun:13,Jul:15,Aug:17,Sep:19,Oct:21,Nov:23,Dec:25};
+
+// ─── Helpers ──────────────────────────────────────────────────────────────
+function n(v){ const x=parseFloat(String(v||0).replace(/[$, \s]/g,'')); return isNaN(x)?0:x; }
+function fv(v,fmt){ const x=Math.round(v||0); return fmt==='$'?'$'+x.toLocaleString():x.toLocaleString(); }
+function pct(a,g){ if(!g)return 0; return Math.min(200,Math.round(a/g*100)); }
+function cls(p){ return p>=90?'g':p>=70?'a':'r'; }
+function arr(p){ return p>=90?'↑':p>=70?'→':'↓'; }
+
+// ─── Parse Excel ──────────────────────────────────────────────────────────
+function parseExcel(ab){
+  const wb = XLSX.read(ab, {type:'array'});
+
+  // ── Sheet1: Funnel ──────────────────────────────────────────────────────
+  const ws1 = wb.Sheets['Sheet1'];
+  if(!ws1) throw new Error('"Sheet1" not found — make sure you\'re uploading Marketing_L-10_Weekly.xlsx');
+  const S1 = XLSX.utils.sheet_to_json(ws1, {header:1, defval:'', raw:true});
+
+  // Detect current month: last month col where ACV actual (row 5) > 0
+  let curMonth='May', curGoalCol=11, curActCol=12;
+  for(const [mo, gc] of Object.entries(MO_GOAL)){
+    const ac = gc+1;
+    const v = parseFloat(String(S1[5]?.[ac]||'').replace(/[$,\s]/g,''));
+    if(!isNaN(v) && v>0){ curMonth=mo; curGoalCol=gc; curActCol=ac; }
+  }
+
+  // Business days from col 32 (label "Days Completed (out of X)") col 33 (elapsed)
+  const bizLabel = String(S1[4]?.[32]||'');
+  const bizElapsed = n(S1[4]?.[33]);
+  const totalMatch = bizLabel.match(/out of (\d+)/);
+  const bizTotal = totalMatch ? parseInt(totalMatch[1]) : 21;
+  const pctElapsed = bizTotal>0 ? bizElapsed/bizTotal : 1;
+  const isComplete = bizElapsed >= bizTotal;
+
+  // Funnel rows
+  const FDEFS = [
+    {id:'acv',  label:'Mktg sourced ACV',  row:5,  fmt:'$'},
+    {id:'mql',  label:'Leads',              row:9,  fmt:'n'},
+    {id:'sql',  label:'SQLs',               row:11, fmt:'n'},
+    {id:'opps', label:'Total opps created', row:12, fmt:'n'},
+    {id:'sqo',  label:'Total SQOs',         row:22, fmt:'n'},
+  ];
+  const funnel = FDEFS.map(f => {
+    const r = S1[f.row]||[];
+    const mgoal  = n(r[curGoalCol]);
+    const actual = n(r[curActCol]);
+    const expected = Math.round(mgoal * pctElapsed);
+    const pctGoal  = mgoal>0 ? actual/mgoal : 0;
+    return {...f, mgoal, actual, expected, pctGoal};
+  });
+
+  // Annual goals (col 27) and YTD actuals — sum months up to current
+  const ytd = {};
+  FDEFS.forEach(f => {
+    const annualGoal = n((S1[f.row]||[])[27]);
+    let ytdActual=0, ytdGoal=0;
+    for(const [mo, gc] of Object.entries(MO_GOAL)){
+      const ac = gc+1;
+      const gv = n((S1[f.row]||[])[gc]);
+      const av = parseFloat(String((S1[f.row]||[])[ac]||'').replace(/[$,\s]/g,''));
+      if(!isNaN(av) && av>0){ ytdActual+=av; ytdGoal+=gv; }
+      if(mo===curMonth) break;
+    }
+    // Override YTD actual for ACV from col 28 if available
+    if(f.id==='acv' && n((S1[f.row]||[])[28])>0) ytdActual = n((S1[f.row]||[])[28]);
+    ytd[f.id] = {annualGoal, ytdActual, ytdGoal, pctAnnual: annualGoal>0?ytdActual/annualGoal:0};
+  });
+
+  // Lead sources — "Leads by Source" rows 167-181
+  // Row 166 headers: col 4=Jan, 6=Feb, 8=Mar, 10=Apr, 12=May
+  const SRC_MO_COLS = [
+    {mo:'Jan',col:4},{mo:'Feb',col:6},{mo:'Mar',col:8},
+    {mo:'Apr',col:10},{mo:'May',col:12},{mo:'Jun',col:14},
+    {mo:'Jul',col:16},{mo:'Aug',col:18},{mo:'Sep',col:20}
+  ];
+
+  // Collect all sources with their full monthly history
+  const allSources = [];
+  for(let r=167; r<182; r++){
+    const row  = S1[r]||[];
+    const name = String(row[0]||'').trim();
+    if(!name || name.toLowerCase() === 'problems') continue;
+    const monthly = {};
+    let hasAny = false;
+    for(const {mo,col} of SRC_MO_COLS){
+      const v = parseFloat(String(row[col]||'').replace(/[,$\s]/g,''));
+      const val = (!isNaN(v) && v>0) ? Math.round(v) : 0;
+      monthly[mo] = val;
+      if(val>0) hasAny=true;
+    }
+    if(hasAny) allSources.push({name, monthly, mtd: monthly[curMonth]||0});
+  }
+
+  // Sort by current month desc, take top 5
+  allSources.sort((a,b)=>b.mtd-a.mtd);
+  const sources = allSources.slice(0,5).map((s,i)=>({
+    rank:'#'+(i+1), name:s.name, mtd:s.mtd, monthly:s.monthly, latestMo:curMonth
+  }));
+
+  // ── Sheet2: Cohorts ─────────────────────────────────────────────────────
+  const ws2 = wb.Sheets['Sheet2'];
+  const S2 = ws2 ? XLSX.utils.sheet_to_json(ws2, {header:1, defval:'', raw:true}) : [];
+
+  // Find current month goal/actual cols in Sheet2 row 0
+  let coGoalCol=9, coActCol=10;
+  const hdr = S2[0]||[];
+  for(let c=0; c<hdr.length; c++){
+    if(String(hdr[c]).trim()===curMonth){ coGoalCol=c; coActCol=c+1; break; }
+  }
+
+  function gv2(row,col){
+    if(!S2[row]) return 0;
+    const v = parseFloat(String(S2[row][col]||0).replace(/[$,\s]/g,''));
+    return isNaN(v)?0:v;
+  }
+
+  // Each cohort block: 8 rows — name, Opps, SQO Rate, SQOs, SQO-to-Win Rate, Won Deals, ASP, ACV
+  // Starts: UltraTax=1, Lacerte=9, ProConnect=17, CCH=25, Drake=33, Intuit=41, GenAcct=49
+  const coStarts = [1,9,17,25,33,41,49];
+  const cohorts = coStarts.map(s=>({
+    oppsG: gv2(s+1,coGoalCol), oppsA: gv2(s+1,coActCol),
+    sqoG:  gv2(s+3,coGoalCol), sqoA:  gv2(s+3,coActCol),
+    wonG:  gv2(s+5,coGoalCol), wonA:  gv2(s+5,coActCol),
+    aspG:  gv2(s+6,coGoalCol), aspA:  gv2(s+6,coActCol),
+    acvG:  gv2(s+7,coGoalCol), acvA:  gv2(s+7,coActCol),
+  }));
+
+  // ── Sheet3: Rocks ────────────────────────────────────────────────────────
+  // Row 1 is now a header row ("Planning Season Department Rocks", "Owner", "Actual so far", "Season Goal")
+  // Data cols: 0=rock, 1=owner, 2=actual, 3=goal
+  const ws3 = wb.Sheets['Sheet3'];
+  const S3 = ws3 ? XLSX.utils.sheet_to_json(ws3, {header:1, defval:'', raw:true}) : [];
+  const rocks = {planning:[], selling:[]};
+  let sec = null;
+  S3.forEach(row=>{
+    const label  = String(row[0]||'').trim();
+    const owner  = String(row[1]||'').trim();
+    const actual = parseFloat(String(row[3]||'').replace(/[,$\s]/g,''));
+    const goal   = parseFloat(String(row[4]||'').replace(/[,$\s]/g,''));
+    const hasData = !isNaN(actual) && !isNaN(goal) && goal > 0;
+    if(label==='Planning Season Department Rocks'){ sec='planning'; return; }
+    if(label==='Selling Season Department Rocks'){  sec='selling';  return; }
+    if(!label || label==='Owner' || label==='Actual so far') return;
+    if(sec && owner){
+      rocks[sec].push({
+        rock:   label,
+        owner,
+        actual: hasData ? actual : null,
+        goal:   hasData ? goal   : null,
+      });
+    }
+  });
+  const byOwner={};
+  rocks.selling.forEach(r=>{
+    if(!byOwner[r.owner]) byOwner[r.owner]=[];
+    byOwner[r.owner].push({rock:r.rock, actual:r.actual, goal:r.goal});
+  });
+
+  return {
+    curMonth, bizElapsed, bizTotal, pctElapsed, isComplete,
+    monthLabel: curMonth+' '+new Date().getFullYear(),
+    funnel, ytd, cohorts, sources, rocks, byOwner
+  };
+}
+
+// ─── Render ───────────────────────────────────────────────────────────────
+function getM(f){
+  if(VIEW==='month') return {actual:f.actual, goal:f.mgoal, pctGoal:f.pctGoal, expected:f.expected};
+  const y = D.ytd[f.id]||{};
+  return {actual:y.ytdActual||0, goal:y.annualGoal||0, pctGoal:y.pctAnnual||0, expected:y.ytdGoal||0};
+}
+
+function renderAll(){
+  renderMeta();
+  renderMetrics();
+  renderAlerts();
+  renderCohorts();
+  renderSources();
+  renderRocks();
+  renderProjections();
+}
+
+function renderMeta(){
+  const {monthLabel,bizElapsed,bizTotal,isComplete} = D;
+  document.getElementById('metaLine').textContent = isComplete
+    ? monthLabel+' · Month complete ('+bizTotal+' business days)'
+    : monthLabel+' · '+bizElapsed+' of '+bizTotal+' business days elapsed ('+Math.round(D.pctElapsed*100)+'% of month)';
+  document.getElementById('cardLabel').textContent = VIEW==='month'
+    ? (isComplete ? 'Final monthly actuals' : 'Month-to-date actuals')
+    : (isComplete ? 'Final YTD actuals' : 'Year-to-date actuals');
+  document.getElementById('projLabel').textContent = isComplete
+    ? 'Final results vs. goals'
+    : 'Month-end & year-end projections';
+}
+
+function renderMetrics(){
+  document.getElementById('metricGrid').innerHTML = D.funnel.map(f=>{
+    const {actual,goal,pctGoal,expected} = getM(f);
+    const p = Math.round(pctGoal*100);
+    const isComplete = D.isComplete;
+    const gap = isComplete ? actual-goal : actual-expected;
+    const gapLabel = isComplete ? 'vs goal' : 'vs expected pace';
+    const gapStr = (gap>=0?'+':'-')+fv(Math.abs(gap),f.fmt);
+    return `<div class="mc">
+      <div class="mc-label">${f.label}</div>
+      <div class="mc-val">${fv(actual,f.fmt)}</div>
+      <div class="mc-badges"><span class="badge ${cls(p)}">${arr(p)} ${p}%</span></div>
+      <div class="mc-sub">${gap>=0?'▲':'▼'} ${gapStr} ${gapLabel}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderAlerts(){
+  const isComplete = D.isComplete;
+  const issues = D.funnel.filter(f=>Math.round(getM(f).pctGoal*100)<90);
+  const el = document.getElementById('alertsArea');
+  if(!issues.length){
+    el.innerHTML=`<div class="alert good"><div class="alert-title" style="color:var(--ts)">✓ All metrics on track</div></div>`;
+    return;
+  }
+  el.innerHTML = issues.map(f=>{
+    const {actual,goal,pctGoal} = getM(f);
+    const p = Math.round(pctGoal*100);
+    const gap = goal-actual;
+    const sev = p<70?'Off track':'At risk';
+    return `<div class="alert ${p<70?'':'warn'}">
+      <div class="row">
+        <div class="alert-title">${f.label} — ${p}% ${isComplete?'of final goal':'to goal'}</div>
+        <span class="badge ${p<70?'r':'a'}">${sev}</span>
+      </div>
+      <div class="alert-body">
+        ${isComplete?'Final':'Actual'}: <strong>${fv(actual,f.fmt)}</strong> &nbsp;·&nbsp;
+        Goal: ${fv(goal,f.fmt)} &nbsp;·&nbsp;
+        ${isComplete?'Finished':'Gap'}: <strong>${fv(Math.abs(gap),f.fmt)}</strong> short (${goal?Math.round(gap/goal*100):0}%)
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderProjections(){
+  const pe = D.pctElapsed||1;
+  const isComplete = D.isComplete;
+  const annPe = (new Date().getMonth()+1)/12;
+  document.getElementById('projGrid').innerHTML = [
+    {
+      scope: isComplete?'Final monthly results':'Month-end projection',
+      label: D.monthLabel,
+      rows: D.funnel.map(f=>({
+        label:f.label, fmt:f.fmt,
+        proj: isComplete ? f.actual : Math.round(f.actual/(pe||1)),
+        goal: f.mgoal
+      }))
+    },
+    {
+      scope: 'Year-end projection',
+      label: 'Dec '+new Date().getFullYear(),
+      rows: D.funnel.map(f=>{
+        const y=D.ytd[f.id]||{};
+        return {label:f.label, fmt:f.fmt, proj:Math.round((y.ytdActual||0)/(annPe||1)), goal:y.annualGoal||0};
+      })
+    }
+  ].map(v=>`<div class="proj-card">
+    <div class="proj-scope">${v.scope}</div>
+    ${v.rows.map(r=>{
+      const p=pct(r.proj,r.goal);
+      return `<div class="proj-row">
+        <div class="proj-label">${r.label}</div>
+        <div class="proj-vals">
+          <span style="font-size:12px;font-weight:500;color:var(--t1)">${fv(r.proj,r.fmt)}</span>
+          <span class="badge ${cls(p)}" style="font-size:10px">${arr(p)} ${p}%</span>
+        </div>
+      </div>`;
+    }).join('')}
+  </div>`).join('');
+}
+
+function renderCohorts(){
+  document.getElementById('cohortGrid').innerHTML = D.cohorts.map((d,i)=>{
+    const acvP = pct(d.acvA,d.acvG);
+    const rows = [
+      {l:'Opps',      a:d.oppsA, g:d.oppsG, f:'n'},
+      {l:'SQOs',      a:d.sqoA,  g:d.sqoG,  f:'n'},
+      {l:'Won deals', a:d.wonA,  g:d.wonG,  f:'n'},
+      {l:'ACV',       a:d.acvA,  g:d.acvG,  f:'$'},
+    ];
+    return `<div class="ccard">
+      <div class="ccard-hdr">
+        <span style="display:flex;align-items:center;gap:5px">
+          <span style="width:7px;height:7px;border-radius:50%;background:${COHORT_COLORS[i]};display:inline-block;flex-shrink:0"></span>
+          ${COHORT_NAMES[i]}
+        </span>
+        <span class="badge ${cls(acvP)}" style="font-size:10px">${acvP}% ACV</span>
+      </div>
+      ${rows.map(r=>{
+        const p=pct(r.a,r.g);
+        return `<div class="crow">
+          <div class="crow-l">${r.l}</div>
+          <div class="crow-r">
+            <span class="crow-val">${fv(r.a,r.f)}</span>
+            ${r.g?`<span class="crow-goal">/ ${fv(r.g,r.f)}</span>`:''}
+            ${r.g?`<span class="badge ${cls(p)}" style="font-size:10px">${r.a>r.g?'↑':''}${p}%</span>`:''}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderSources(){
+  const lbl = document.getElementById('srcMonthLabel');
+  if(lbl && D.curMonth) lbl.textContent = 'Jan – '+D.curMonth;
+
+  if(!D.sources||!D.sources.length||!D.sources.some(s=>s.mtd>0)){
+    document.getElementById('sourcesGrid').innerHTML=`<div class="empty">Lead source data not available</div>`;
+    return;
+  }
+
+  // Determine which months to show (up to and including curMonth)
+  const ALL_MOS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+  const curIdx  = ALL_MOS.indexOf(D.curMonth);
+  const months  = ALL_MOS.slice(0, curIdx+1);
+
+  // Global max across all sources and months for consistent y-axis scaling
+  const globalMax = Math.max(...D.sources.map(s=>Math.max(...months.map(m=>s.monthly[m]||0))));
+
+  const COLORS = ['#185FA5','#7F77DD','#D85A30','#639922','#D4537E'];
+  const W = 260, H = 80, PAD = {t:6,r:6,b:22,l:32};
+  const cW = W - PAD.l - PAD.r;
+  const cH = H - PAD.t - PAD.b;
+  const step = months.length > 1 ? cW / (months.length-1) : cW;
+
+  function makePath(s, color, i){
+    const pts = months.map((m,mi)=>{
+      const v = s.monthly[m]||0;
+      const x = PAD.l + (months.length>1 ? mi*step : cW/2);
+      const y = PAD.t + cH - (globalMax>0 ? (v/globalMax)*cH : 0);
+      return {x,y,v,m};
+    });
+
+    const pathD = pts.map((p,pi)=>`${pi===0?'M':'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+    // Area fill
+    const areaD = pathD
+      + ` L${pts[pts.length-1].x.toFixed(1)},${(PAD.t+cH).toFixed(1)}`
+      + ` L${pts[0].x.toFixed(1)},${(PAD.t+cH).toFixed(1)} Z`;
+
+    const dots = pts.map(p=>`
+      <circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3" fill="${color}" stroke="var(--bg)" stroke-width="1.5">
+        <title>${p.m}: ${p.v.toLocaleString()} leads</title>
+      </circle>`).join('');
+
+    // X axis labels
+    const xLabels = pts.map(p=>`
+      <text x="${p.x.toFixed(1)}" y="${(PAD.t+cH+13).toFixed(1)}" text-anchor="middle"
+        font-size="9" fill="var(--t3)">${p.m}</text>`).join('');
+
+    // Y axis: 0 and max
+    const yLabels = `
+      <text x="${(PAD.l-3).toFixed(1)}" y="${(PAD.t+cH).toFixed(1)}" text-anchor="end"
+        font-size="9" fill="var(--t3)">0</text>
+      <text x="${(PAD.l-3).toFixed(1)}" y="${(PAD.t+4).toFixed(1)}" text-anchor="end"
+        font-size="9" fill="var(--t3)">${globalMax>=1000?(globalMax/1000).toFixed(1)+'k':globalMax}</text>`;
+
+    // Gridlines
+    const grids = [0,0.5,1].map(frac=>{
+      const gy = PAD.t + cH*(1-frac);
+      return `<line x1="${PAD.l}" y1="${gy.toFixed(1)}" x2="${(PAD.l+cW).toFixed(1)}" y2="${gy.toFixed(1)}"
+        stroke="var(--b3)" stroke-width="0.5" stroke-dasharray="3,3"/>`;
+    }).join('');
+
+    return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;overflow:visible">
+      ${grids}${yLabels}${xLabels}
+      <path d="${areaD}" fill="${color}" opacity="0.08"/>
+      <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+      ${dots}
+    </svg>`;
+  }
+
+  document.getElementById('sourcesGrid').innerHTML = D.sources.map((s,i)=>{
+    const color   = COLORS[i];
+    const ytd     = months.reduce((sum,m)=>sum+(s.monthly[m]||0),0);
+    const prevMo  = months.length>1 ? months[months.length-2] : null;
+    const prev    = prevMo ? (s.monthly[prevMo]||0) : null;
+    const delta   = prev!==null ? s.mtd - prev : null;
+    const deltaHtml = delta!==null
+      ? `<span style="font-size:10px;color:${delta>=0?'var(--ts)':'var(--td)'};margin-left:4px">${delta>=0?'▲':'▼'}${Math.abs(delta).toLocaleString()} vs ${prevMo}</span>`
+      : '';
+    return `<div class="src" style="grid-column:span 1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="width:8px;height:8px;border-radius:50%;background:${color};flex-shrink:0;display:inline-block"></span>
+        <span class="src-name" style="margin-bottom:0;flex:1">${s.name}</span>
+        <span class="src-rank">${s.rank}</span>
+      </div>
+      ${makePath(s,color,i)}
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:5px">
+        <div><span class="src-val">${s.mtd.toLocaleString()}</span><span class="src-sub"> ${D.curMonth}</span>${deltaHtml}</div>
+        <div><span style="font-size:11px;color:var(--t2)">${ytd.toLocaleString()}</span><span class="src-sub"> YTD</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderRocks(){
+  if(!D.rocks) return;
+
+  // Season 2: May 1 – Sep 30 (5 months). Calculate % of season elapsed.
+  const SEASON_START = new Date(2026, 4, 1);  // May 1 2026
+  const SEASON_END   = new Date(2026, 8, 30); // Sep 30 2026
+  const now          = new Date();
+  const totalMs      = SEASON_END - SEASON_START;
+  const elapsedMs    = Math.min(Math.max(now - SEASON_START, 0), totalMs);
+  const seasonPct    = Math.round(elapsedMs / totalMs * 100);
+  const seasonLabel  = `${seasonPct}% through season (May–Sep)`;
+
+  function rockBar(actual, goal){
+    const p        = Math.min(150, Math.round(actual / goal * 100));
+    const expected = Math.min(100, seasonPct);
+    const barColor = p >= expected - 5 ? '#639922' : p >= expected - 20 ? '#EF9F27' : '#E24B4A';
+    const expectedLeft = Math.min(expected, 98); // cap so marker stays visible
+    return `
+      <div style="margin-top:5px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="flex:1;height:7px;background:var(--b3);border-radius:4px;overflow:visible;position:relative">
+            <div style="height:100%;width:${Math.min(100,p)}%;background:${barColor};border-radius:4px;transition:width .5s"></div>
+            <div title="Expected pace: ${expected}%" style="position:absolute;top:-3px;left:${expectedLeft}%;width:2px;height:13px;background:var(--t3);border-radius:1px;transform:translateX(-50%)"></div>
+          </div>
+          <span style="font-size:11px;color:var(--t2);white-space:nowrap">${actual.toLocaleString()} / ${goal.toLocaleString()}</span>
+          <span style="font-size:11px;font-weight:600;color:${barColor};white-space:nowrap">${p}%</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+          Expected at pace: ${Math.round(goal * seasonPct / 100).toLocaleString()} (${expected}%) &nbsp;·&nbsp; ${p >= expected ? `<span style="color:#639922">▲ ${p - expected}pts ahead</span>` : `<span style="color:#E24B4A">▼ ${expected - p}pts behind</span>`}
+        </div>
+      </div>`;
+  }
+
+  // ── Department rocks ────────────────────────────────────────────────
+  const deptEl = document.getElementById('deptRocks');
+  if(deptEl){
+    const paceHeader = `<div style="font-size:11px;color:var(--t3);margin-bottom:.6rem;display:flex;align-items:center;gap:5px">
+      <span style="display:inline-block;width:8px;height:2px;background:var(--t3);border-radius:1px;vertical-align:middle"></span>
+      ${seasonLabel} — pace marker shown on each bar
+    </div>`;
+    deptEl.innerHTML = paceHeader + (D.rocks.planning.map((r,i,arr)=>`
+      <div style="padding:.6rem 0;${i<arr.length-1?'border-bottom:0.5px solid var(--b3)':''}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <span style="font-size:12px;color:var(--t1);line-height:1.45;flex:1">${r.rock}</span>
+        </div>
+        ${r.actual!==null && r.goal>0 ? rockBar(r.actual, r.goal) : ''}
+      </div>`).join('') || '') + '<div class="empty" style="display:none"></div>';
+  }
+
+  // ── Team rocks by owner ─────────────────────────────────────────────
+  const gridEl = document.getElementById('rocksGrid');
+  if(!gridEl) return;
+  const owners = Object.keys(D.byOwner).sort();
+  if(!owners.length){ gridEl.innerHTML='<div class="empty">No team rocks found</div>'; return; }
+  gridEl.innerHTML = owners.map(owner=>{
+    const color = OWNER_COLORS[owner]||'#888780';
+    const initials = owner.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const rocks = D.byOwner[owner];
+    return `<div class="rcard">
+      <div class="rcard-hdr">
+        <span class="ravatar" style="background:${color}22;color:${color}">${initials}</span>
+        <span class="rowner">${owner}</span>
+        <span class="badge info" style="font-size:10px">${rocks.length}</span>
+      </div>
+      ${rocks.map(r=>`
+        <div class="ritem" style="flex-direction:column;align-items:flex-start;gap:3px">
+          <div style="display:flex;align-items:flex-start;gap:6px;width:100%">
+            <i class="ti ti-circle-dot" style="font-size:11px;color:${color};flex-shrink:0;margin-top:2px"></i>
+            <span>${r.rock}</span>
+          </div>
+          ${r.actual!==null && r.goal>0 ? `<div style="width:100%;padding-left:17px">${rockBar(r.actual,r.goal)}</div>` : ''}
+        </div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+// ─── View toggle ──────────────────────────────────────────────────────────
+function setView(v){
+  VIEW=v;
+  document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('on',(i===0&&v==='month')||(i===1&&v==='annual')));
+  if(D){ renderMeta(); renderMetrics(); renderAlerts(); renderProjections(); }
+}
+
+// ─── File handling ────────────────────────────────────────────────────────
+function loadData(ab, filename){
+  try{
+    D = parseExcel(ab);
+    renderAll();
+    document.getElementById('dzStatus').textContent = '✓ '+filename+' loaded — '+D.monthLabel;
+    document.getElementById('dzStatus').className = 'dz-status ok';
+    document.getElementById('exportBtn').style.display = 'flex';
+  } catch(err){
+    document.getElementById('dzStatus').textContent = 'Error: '+err.message;
+    document.getElementById('dzStatus').className = 'dz-status err';
+  }
+}
+
+function onDragOver(e){ e.preventDefault(); document.getElementById('dropZone').classList.add('over'); }
+function onDragLeave(){ document.getElementById('dropZone').classList.remove('over'); }
+function onDrop(e){
+  e.preventDefault(); onDragLeave();
+  const f = e.dataTransfer.files[0];
+  if(f){ const r=new FileReader(); r.onload=ev=>loadData(ev.target.result,f.name); r.readAsArrayBuffer(f); }
+}
+function onFile(e){
+  const f = e.target.files[0];
+  if(f){ const r=new FileReader(); r.onload=ev=>loadData(ev.target.result,f.name); r.readAsArrayBuffer(f); }
+}
+
+// ─── Export snapshot ──────────────────────────────────────────────────────
+function doExport(e){
+  e.stopPropagation();
+  const summary = document.getElementById('summaryTA').value||'';
+  const payload = JSON.stringify({D});
+  const escaped = payload.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\${/g,'\\${');
+
+  // Build read-only summary HTML from textarea content
+  const readOnlyHtml = summary
+    ? summary.split('\n').map(line=>{
+        const t=line.trim();
+        if(!t) return '<div style="height:.5rem"></div>';
+        return '<p style="margin:0 0 .4rem 0;font-size:13px;color:var(--t1);line-height:1.7">'
+          +t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p>';
+      }).join('')
+    : '<p style="font-size:13px;color:var(--t3);font-style:italic">No summary added for this week.</p>';
+
+  const injection = `
+
+</body></html>
